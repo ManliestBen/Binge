@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const moviesCtrl = require('../controllers/movies');
 
-// This is where our Movie routes will go
-
+router.post('/', moviesCtrl.create);
+router.get('/', moviesCtrl.index)
 module.exports = router;
