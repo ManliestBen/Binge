@@ -20,7 +20,7 @@ const tvshowSchema = new Schema({
         type: Number
     },
     releaseDate: {
-        type: Date
+        type: Number
     },
     imdbRating: {
         type: Number

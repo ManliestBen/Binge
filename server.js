@@ -4,10 +4,11 @@ const logger = require('morgan');
 const port = process.env.PORT || 3001;
 const movieRouter = require('./routes/movies');
 const tvshowRouter = require('./routes/tvshows');
+const cors = require('cors')
 
 require('dotenv').config();
 require('./config/database');
-
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 
