@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from '../../components/NavBar/NavBar';
 import { Route } from 'react-router-dom';
 import * as movieAPI from '../../services/movies-api';
+import * as tvshowAPI from '../../services/tvshows-api';
 
 class App extends Component {
   state = {
@@ -13,6 +14,8 @@ class App extends Component {
   async componentDidMount() {
     const movies = await movieAPI.getAll();
     this.setState({movies})
+    const tvshows = await tvshowAPI.getAll();
+    this.setState({tvshows})
   }
 
   render() {
