@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import NavBar from '../../components/NavBar/NavBar';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -9,7 +11,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>Panda</div>
+      <>
+        <Route exact path='/' render={() =>
+          <>
+            <NavBar 
+              pageName={"Welcome to Binge!"}
+            />
+          </>
+        }>
+
+        </Route>
+      </>
     )
   }
 }
