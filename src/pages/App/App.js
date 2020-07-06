@@ -6,6 +6,8 @@ import * as movieAPI from '../../services/movies-api';
 import * as tvshowAPI from '../../services/tvshows-api';
 import AddMoviePage from '../AddMoviePage/AddMoviePage';
 import AddTVShowPage from '../AddTVShowPage/AddTVShowPage';
+import MovieListPage from '../MovieListPage/MovieListPage';
+import TVShowListPage from '../TVShowListPage/TVShowListPage';
 
 
 class App extends Component {
@@ -38,6 +40,12 @@ class App extends Component {
         </Route>
         <Route exact path='/tvshows/add' render={()=> 
           <AddTVShowPage />  
+        }>
+        </Route>
+        <Route exact path='/movies' render={()=> 
+          <MovieListPage 
+            movies={this.state.movies}
+          />
         }>
         </Route>
       </>

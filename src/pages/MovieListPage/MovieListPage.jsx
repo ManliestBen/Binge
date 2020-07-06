@@ -11,8 +11,9 @@ function MovieListPage(props) {
             />
             <div className='MovieListPage-grid'>
                 {props.movies.map(movie => 
-                    <MovieCard 
-                        
+                    <MovieCard
+                        key={movie._id}
+                        movie={movie}
                     />
                 )}
             </div>
