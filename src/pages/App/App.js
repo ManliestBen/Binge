@@ -4,6 +4,9 @@ import NavBar from '../../components/NavBar/NavBar';
 import { Route } from 'react-router-dom';
 import * as movieAPI from '../../services/movies-api';
 import * as tvshowAPI from '../../services/tvshows-api';
+import AddMoviePage from '../AddMoviePage/AddMoviePage';
+import AddTVShowPage from '../AddTVShowPage/AddTVShowPage';
+
 
 class App extends Component {
   state = {
@@ -27,6 +30,14 @@ class App extends Component {
               pageName={"Welcome to Binge!"}
             />
           </>
+        }>
+        </Route>
+        <Route exact path='/movies/add' render={()=> 
+          <AddMoviePage />  
+        }>
+        </Route>
+        <Route exact path='/tvshows/add' render={()=> 
+          <AddTVShowPage />  
         }>
         </Route>
       </>
