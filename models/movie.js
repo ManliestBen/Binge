@@ -27,6 +27,9 @@ const movieSchema = new Schema({
     },
     imdbRating: {
         type: Number
+    },
+    image: {
+        type: String
     }
 
 }, { timestamps: true })
