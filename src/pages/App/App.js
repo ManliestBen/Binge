@@ -48,6 +48,12 @@ class App extends Component {
           />
         }>
         </Route>
+        <Route exact path='/tvshows' render={()=> 
+          <TVShowListPage 
+            tvshows={this.state.tvshows}
+          />
+        }>
+        </Route>
       </>
     )
   }
