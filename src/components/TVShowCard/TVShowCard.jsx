@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function TVShowCard({ tvshow }) {
+function TVShowCard({ tvshow, handleDeleteTVShow }) {
     return(
         <>
             <div className=" card">
@@ -20,6 +20,10 @@ function TVShowCard({ tvshow }) {
                     <div>Seasons:  {tvshow.seasons}</div>
                     <div>Episodes:  {tvshow.episodes}</div>
                     <p>{tvshow.description}</p>
+                    <button type="submit" className="btn red" onClick={() => handleDeleteTVShow(tvshow._id)}>
+                    <i className="material-icons left">delete</i>    
+                        Delete TV Show
+                    </button>
                 </div>
             </div>
         </>

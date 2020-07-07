@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, handleDeleteMovie }) {
     return(
         <>
             <div className=" card">
@@ -20,6 +20,10 @@ function MovieCard({ movie }) {
                     <div>Cast: {movie.cast.join(', ')}</div>
                     <div>MPAA Rating:  {movie.mpaaRating}</div>
                     <p>{movie.description}</p>
+                    <button type="submit" className="btn red" onClick={() => handleDeleteMovie(movie._id)}>
+                    <i className="material-icons left">delete</i>    
+                        Delete Movie
+                    </button>
                 </div>
             </div>
         </>

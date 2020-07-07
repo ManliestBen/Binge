@@ -14,6 +14,7 @@ function TVShowListPage(props) {
                     <TVShowCard
                         key={tvshow._id}
                         tvshow={tvshow}
+                        handleDeleteTVShow={props.handleDeleteTVShow}
                     />
                 )}
             </div>

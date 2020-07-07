@@ -14,6 +14,7 @@ function MovieListPage(props) {
                     <MovieCard
                         key={movie._id}
                         movie={movie}
+                        handleDeleteMovie={props.handleDeleteMovie}
                     />
                 )}
             </div>
