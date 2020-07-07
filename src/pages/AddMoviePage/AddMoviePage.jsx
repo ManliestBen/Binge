@@ -5,7 +5,7 @@ class AddMoviePage extends Component {
     state = {
         invalidForm: true,
         formData: {
-            name: 'taco',
+            name: '',
             cast: [],
             description: '',
             mpaaRating: '',
@@ -22,7 +22,7 @@ class AddMoviePage extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        // Use passed in function to handle adding movie
+        this.props.handleAddMovie(this.state.formData)
     }
 
     handleChange = e => {

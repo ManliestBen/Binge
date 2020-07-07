@@ -16,6 +16,13 @@ class App extends Component {
     tvshows: []
   }
 
+  handleAddMovie = async newMovieData => {
+    const newMovie = await movieAPI.create(newMovieData);
+    this.setState(state => ({
+      movies: [...state.movies, newMovie]
+    }), ()=> this.props.history.push('/movies'));
+  }
+
   async componentDidMount() {
     const movies = await movieAPI.getAll();
     this.setState({movies})
@@ -35,7 +42,9 @@ class App extends Component {
         }>
         </Route>
         <Route exact path='/movies/add' render={()=> 
-          <AddMoviePage />  
+          <AddMoviePage 
+            handleAddMovie={this.handleAddMovie}
+          />  
         }>
         </Route>
         <Route exact path='/tvshows/add' render={()=> 
