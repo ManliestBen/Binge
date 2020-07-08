@@ -44,6 +44,26 @@ class App extends Component {
     }), () => this.props.history.push('/tvshows'));
   }
 
+  handleUpdateMovie = async updatedMovieData => {
+    const updatedMovie = await movieAPI.update(updatedMovieData);
+    const newMoviesArray = this.state.movies.map(m =>
+      m._id === updatedMovie._id ? updatedMovie : m);
+    this.setState(
+      {movies: newMoviesArray},
+      () => this.props.history.push('/movies')
+    )
+  }
+
+  handleUpdateTVShow = async updatedTVShowData => {
+    const updatedTVShow = await tvshowAPI.update(updatedTVShowData);
+    const newTVShowsArray = this.state.tvshows.map(t =>
+      t._id === updatedTVShow._id ? updatedTVShow : t);
+    this.setState(
+      {tvshows: newTVShowsArray},
+      () => this.props.history.push('/tvshows')
+    )
+  }
+
   async componentDidMount() {
     const movies = await movieAPI.getAll();
     this.setState({movies})
