@@ -24,6 +24,15 @@ function TVShowCard({ tvshow, handleDeleteTVShow }) {
                     <i className="material-icons left">delete</i>    
                         Delete TV Show
                     </button>
+                    <Link 
+                        className="btn yellow black-text"
+                        to={{
+                            pathname: '/editTV',
+                            state: {tvshow}
+                        }}
+                    ><i className="material-icons left">build</i>
+                        Edit TV Show
+                    </Link>
                 </div>
             </div>
         </>

@@ -8,6 +8,8 @@ import AddMoviePage from '../AddMoviePage/AddMoviePage';
 import AddTVShowPage from '../AddTVShowPage/AddTVShowPage';
 import MovieListPage from '../MovieListPage/MovieListPage';
 import TVShowListPage from '../TVShowListPage/TVShowListPage';
+import EditMoviePage from '../EditMoviePage/EditMoviePage';
+import EditTVShowPage from '../EditTVShowPage/EditTVShowPage';
 
 
 class App extends Component {
@@ -107,6 +109,21 @@ class App extends Component {
             handleDeleteTVShow={this.handleDeleteTVShow}
           />
         }>
+        </Route>
+        <Route exact path='/edit' render={({location}) =>
+          <EditMoviePage 
+            handleUpdateMovie={this.handleUpdateMovie}
+            location={location}
+          /> 
+        }>
+        </Route>
+        <Route exact path='/editTV' render={({location}) =>
+          <EditTVShowPage 
+            handleUpdateTVShow={this.handleUpdateTVShow}
+            location={location}
+          />
+        }  
+        >
         </Route>
       </>
     )
