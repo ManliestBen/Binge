@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../../components/NavBar/NavBar'
 
 class EditMoviePage extends Component {
     state = {
         invalidForm: false,
-        pageName: "Edit Movie",
         formData: this.props.location.state.movie
     }
 
@@ -25,7 +25,10 @@ class EditMoviePage extends Component {
 
     render() {
         return (
-            <>
+            <>  
+                <NavBar 
+                    pageName={"Edit Movie"}
+                />
                 <div className="row">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
