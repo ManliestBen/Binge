@@ -24,6 +24,15 @@ function MovieCard({ movie, handleDeleteMovie }) {
                     <i className="material-icons left">delete</i>    
                         Delete Movie
                     </button>
+                    <Link
+                        className="btn yellow black-text"
+                        to={{
+                            pathname: '/edit',
+                            state: {movie}
+                        }}
+                    ><i className="material-icons left">build</i>
+                        Edit Movie
+                    </Link>
                 </div>
             </div>
         </>
